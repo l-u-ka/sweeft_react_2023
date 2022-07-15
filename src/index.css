@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  background-color:rgb(255, 255, 255);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body h1, h2, h3, h4, p {
+  color: dodgerblue;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.cards_container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  box-shadow: 3px 3px 3px 3px #888888;
+  border-radius: 5px;
+  background-color:white;
+  width:300px;
+  height:250px;
+  padding: 45px 0px 45px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+.card--img {
+  border-radius: 5px 5px 0px 0px ;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.card--name {
+  font-size: 25px;
+  margin: 0px;
+}
+.card--title {
+  font-size: 15px;
+  margin: 5px;
+}
+.card button {
+  margin: 10px;
+  font-weight: bold;
+  width: 80%;
+  padding: 15px;
+  background: transparent;
+  color:dodgerblue;
+  border-radius: 5px;
+  border: 2px solid dodgerblue;
+}
+.card button:hover {
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
+.card p {
+  font-weight:400;
+}
+
+
+
+
+
+.user {
+  box-shadow: 3px 3px 3px 3px #888888;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-color: white;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.user p {
+  margin: 5px;
+}
+.user h3 {
+  margin: 10px;
+}
+.user h2, h1 {
+  margin: 0px;
+}
+.user--info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+.user--pic {
+  border-radius: 10px;
+  width:500px;
+}
+.user--friends {
+  color: dodgerblue;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+.user span {
+  text-decoration: underline;
+}
+.user--title {
+  font-size: 1.4rem;
+}
