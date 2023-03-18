@@ -1,0 +1,59 @@
+.container {
+  margin: 0;
+  background-color: #eef1ff;
+  padding: 2% 0%;
+}
+
+.user {
+    margin: 0 auto;
+    box-shadow: 3px 3px 3px 3px #888888;
+    border-radius: 10px;
+    background-color: white;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25%;
+    padding: 4% 8%;
+    box-sizing: border-box;
+  }
+  .users--path {
+    margin: 1% 5%; 
+  }
+  .user p {
+    font-size: 1em;
+    margin: 0;
+    font-style: italic;
+    
+  }
+  .user--info-header, .user--address-header {
+    margin: 1.8em 0em 0.4em 0em;
+    font-size: 1.4em;
+  }
+
+  
+  .user--name {
+    margin: 0;
+    font-size: 1.8em;
+  }
+  .user--title {
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
+  }
+  
+  .user--pic {
+    border-radius: 8px;
+    width: 100%;
+    margin: 0;
+  }
+  .user--friends {
+    color: dodgerblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 0 0 0;
+  }
+  .user span {
+    text-decoration: underline;
+  }

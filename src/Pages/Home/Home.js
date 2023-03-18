@@ -1,11 +1,14 @@
 import React from 'react';
-import Card from '../components/Card'
+import Card from '../../Components/Card/Card'
 import {useNavigate} from 'react-router-dom'
+import './Home.css'
+import ReactLoading from "react-loading";
 
 export default function Home() {
     const [allUsers, setAllUsers] = React.useState([]);   //state to save all user info from api call
-    const [loading, setLoading] = React.useState(true);   
+    const [loading, setLoading] = React.useState(false);   
     const [pageNum, setPageNum] = React.useState(1);
+    const [size, setSize] = React.useState(12);
     const [isMore, setIsMore] = React.useState(true);
     
     // function to navigate to user path with id of the user passed as parameter
@@ -17,13 +20,14 @@ export default function Home() {
       // getting api call and storing it in allUsers state
       React.useEffect(
       ()=> {
-        fetch(`http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${pageNum}/12`)
+        setLoading(true);
+        fetch(`http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${pageNum}/${size}`)
         .then(response => {
           if(response.ok) {
             return response.json();
           } throw response;
-        }).then(usersInfo => {
-          setAllUsers([...new Set([...allUsers, ...usersInfo.list])])
+        }).then(usersInfo => {     
+          setAllUsers([...allUsers, ...usersInfo.list])
           setIsMore((usersInfo.pagination.nextPage !== null) ? true : false);
         })
         .catch(error => console.error("Error fetching data"))
@@ -57,7 +61,7 @@ export default function Home() {
           }
         })}   
       </div>
-      {loading && <div>loading...</div>}
+      {loading && <ReactLoading className="spinner" type="spinningBubbles" color="#1e90ff" height={100} width={100} />}
       </>
     )
 }

@@ -1,8 +1,6 @@
-//import logo from './logo.svg';
-//import './App.css';
 import React from 'react';
-import Home from './pages/Home';
-import User from './pages/User';
+import Home from './Pages/Home/Home';
+import User from './Pages/User/User';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {

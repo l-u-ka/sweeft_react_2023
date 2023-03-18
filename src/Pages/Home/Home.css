@@ -1,0 +1,20 @@
+.cards_container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 2% 5%;
+    gap: 2em;
+    background-color: #eef1ff;
+}
+
+.spinner {
+  margin: 20% auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cards_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2% 5%;
+    gap: 2em;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Card.css'
 
 const Card = React.forwardRef((props, ref) => (
 
@@ -9,6 +9,6 @@ const Card = React.forwardRef((props, ref) => (
             <p className="card--title">{props.title}</p>
             <button onClick = {() => props.navigationFunction(props.id)}>View More</button>
         </div>
-  ));
+));
 
 export default Card;
