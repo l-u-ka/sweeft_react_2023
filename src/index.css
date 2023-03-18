@@ -5,6 +5,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 body h1, h2, h3, h4, p {
-  color: dodgerblue;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0F4C81;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

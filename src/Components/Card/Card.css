@@ -19,24 +19,23 @@
   }
   .card--name {
     font-size: 1.2em;
-    margin: 0px;
+    margin: 0.2em 0;
   }
   .card--title {
     font-size: 0.9em;
-    margin-top: 0.3em;
-    margin-bottom: 1em;
+    margin: 0 0 1em 0;
   }
   .card button {
     font-weight: bold;
     width: 80%;
     padding: 1em;
     background: transparent;
-    color:dodgerblue;
+    color:#0F4C81;
     border-radius: 5px;
-    border: 2px solid dodgerblue;
+    border: 2px solid #0F4C81;
   }
   .card button:hover {
-    background-color: dodgerblue;
+    background-color: #0F4C81;
     color: white;
     cursor: pointer;
   }

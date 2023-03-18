@@ -61,7 +61,7 @@ export default function Home() {
           }
         })}   
       </div>
-      {loading && <ReactLoading className="spinner" type="spinningBubbles" color="#1e90ff" height={100} width={100} />}
+      {loading && <ReactLoading className="spinner" type="spinningBubbles" color="#0F4C81" height={100} width={100} />}
       </>
     )
 }

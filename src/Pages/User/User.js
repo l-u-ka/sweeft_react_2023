@@ -15,7 +15,6 @@ export default function Details(props) {
     const [allFriends, setAllFriends] = React.useState([]);
     const [pageNumber, setPageNumber] = React.useState(1);
     const [isMoreLeft, setIsMoreLeft] = React.useState(true);
-
     const [userPath, setUsersPath] = React.useState([]);
   
     let {idParam} = useParams();
@@ -30,6 +29,28 @@ export default function Details(props) {
       window.scrollTo(0, 0)
     }
 
+
+      // getting api call of user's details every time id of the user changes and storing it in UserData state
+      React.useEffect(
+        ()=> {
+          setLoading(true);
+          fetch(`http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${id}`)
+          .then(response => {
+            if(response.ok) {
+              return response.json();
+            } throw response;
+          }).then(userInfo => {
+            setUserData(userInfo);
+            setCompany(userInfo.company);
+            setAddress(userInfo.address);
+            
+          })
+          .catch(error => console.error("Error fetching data"))
+          .finally(()=> {
+            setLoading(false)
+          })
+        }, [id]
+    )
     
     React.useEffect(()=>{
       setFriendsLoading(true);
@@ -67,28 +88,6 @@ export default function Details(props) {
     }, [id])
 
 
-    // getting api call of user's details every time id of the user changes and storing it in UserData state
-    React.useEffect(
-        ()=> {
-          setLoading(true);
-          fetch(`http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${id}`)
-          .then(response => {
-            if(response.ok) {
-              return response.json();
-            } throw response;
-          }).then(userInfo => {
-            setUserData(userInfo);
-            setCompany(userInfo.company);
-            setAddress(userInfo.address);
-            
-          })
-          .catch(error => console.error("Error fetching data"))
-          .finally(()=> {
-            setLoading(false)
-          })
-        }, [id]
-    )
-
     
     React.useEffect(
       ()=> setUsersPath(state => [...state, {name: `${userData.name} ${userData.lastName}`, id: userData.id}]), 
@@ -116,7 +115,7 @@ export default function Details(props) {
 
     return (
         <div className="container">
-        {loading && <ReactLoading className="spinner" type="spinningBubbles" color="#1e90ff" height={100} width={100} />}
+        {loading && <ReactLoading className="spinner" type="spinningBubbles" color="#0F4C81" height={100} width={100} />}
         {!loading && <div className="user">
             <div className="user--info"> 
                 <h1 className="user--name">{userData.prefix + " " + userData.name + " " + userData.lastName}</h1>
@@ -152,7 +151,7 @@ export default function Details(props) {
               }) 
               }
             </div>
-            {friendsLoading && <ReactLoading className="spinner" type="spinningBubbles" color="#1e90ff" height={100} width={100} />} 
+            {friendsLoading && <ReactLoading className="spinner" type="spinningBubbles" color="#0F4C81" height={100} width={100} />} 
         </div>
         </div>
     )

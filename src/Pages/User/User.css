@@ -1,6 +1,6 @@
 .container {
   margin: 0;
-  background-color: #eef1ff;
+  background-color: rgb(238, 241, 237);
   padding: 2% 0%;
 }
 
@@ -48,8 +48,7 @@
     margin: 0;
   }
   .user--friends {
-    color: dodgerblue;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0F4C81;
     text-align: center;
     font-size: 2em;
     margin: 1em 0 0 0;

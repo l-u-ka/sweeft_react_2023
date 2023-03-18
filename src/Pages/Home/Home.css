@@ -3,7 +3,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 2% 5%;
     gap: 2em;
-    background-color: #eef1ff;
+    /*background-color: #eef1ff; */
+    background-color: rgb(238, 241, 237);
+    
 }
 
 .spinner {
